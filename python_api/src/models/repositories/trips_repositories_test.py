@@ -9,7 +9,7 @@ print(db_connection_handler)
 db_connection_handler.connect()
 trip_id = str(uuid.uuid4())
 
-@pytest.mark.skip(reason="iteracao com o bando")
+@pytest.mark.skip(reason="interacao com o bando")
 def test_create_trip():
   conn = db_connection_handler.get_connection()
   trips_repository = TripsRepository(conn)
@@ -26,7 +26,7 @@ def test_create_trip():
 
   trips_repository.crate_trip(trips_infos)
 
-@pytest.mark.skip(reason="iteracao com o bando")
+@pytest.mark.skip(reason="interacao com o bando")
 def test_find_trip_by_id():
   conn = db_connection_handler.get_connection()
   trips_repository = TripsRepository(conn)
@@ -35,7 +35,7 @@ def test_find_trip_by_id():
   print()
   print(trip)
 
-@pytest.mark.skip(reason="iteracao com o bando")
+@pytest.mark.skip(reason="interacao com o bando")
 def test_update_trip_status():
   conn = db_connection_handler.get_connection()
   trips_repository = TripsRepository(conn)
