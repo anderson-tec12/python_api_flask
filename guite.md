@@ -6,3 +6,5 @@ source nome_do_venv/bin/activate
 
 # desativar ambiente 
 deactivate 
+
+pip install flask
