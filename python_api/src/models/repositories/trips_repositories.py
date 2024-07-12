@@ -5,7 +5,7 @@ class TripsRepository:
   def __init__(self, conn:Connection) -> None:
     self.__conn = conn
   
-  def crate_trip(self, trips_infos: Dict) -> None:
+  def create_trip(self, trips_infos: Dict) -> None:
     cursor = self.__conn.cursor()
 
     cursor.execute(
