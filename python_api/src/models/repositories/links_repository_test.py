@@ -6,7 +6,7 @@ from .links_repository import LinksRepository
 db_connection_handler.connect()
 trip_id = str(uuid.uuid4())
 
-# @pytest.mark.skip(reason="interacao com o banco")
+@pytest.mark.skip(reason="interacao com o banco")
 def test_registry_link():
     conn = db_connection_handler.get_connection()
     linksRepository = LinksRepository(conn)
@@ -20,7 +20,7 @@ def test_registry_link():
 
     linksRepository.registry_link(link_infos)
 
-# @pytest.mark.skip(reason="interacao com o banco")
+@pytest.mark.skip(reason="interacao com o banco")
 def test_find_links_from_trip():
     conn = db_connection_handler.get_connection()
     linkRepository = LinksRepository(conn)
