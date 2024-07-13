@@ -5,6 +5,7 @@ from src.controllers.trip_creator import TripCreator
 from src.controllers.trip_finder import TripFinder
 from src.controllers.trip_confirmer import TripConfirmer
 from src.controllers.link_creator import LinkCreator
+from src.controllers.link_finder import LinkFinder
 
 # Repositorios
 from src.models.repositories.trips_repositories import TripsRepository
@@ -69,3 +70,15 @@ def create_trip_link(tripId):
 
   return jsonify(response["body"]), response["status_code"]
 
+@trips_routes_bp.route("/trips/<tripId>/link", methods=["GET"])
+def find_links(tripId):
+
+  conn = db_connection_handler.get_connection()
+
+  link_repository = LinksRepository(conn)
+ 
+  controller = LinkFinder(link_repository)
+
+  response = controller.find(tripId)
+
+  return jsonify(response["body"]), response["status_code"]
