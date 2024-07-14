@@ -13,7 +13,7 @@ class ActivitiesRepository:
         INSERT INTO activities
           (id, trip_id, title, occurs_at)
         VALUES
-          (?,?,?)
+          (?,?,?,?)
       ''',(
         activities_infos["id"],
         activities_infos["trip_id"],
@@ -34,5 +34,7 @@ class ActivitiesRepository:
     )
 
     activities = cursor.fetchall()
+
+    print(activities)
     return activities
   
