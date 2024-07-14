@@ -82,3 +82,4 @@ def find_links(tripId):
   response = controller.find(tripId)
 
   return jsonify(response["body"]), response["status_code"]
+  
